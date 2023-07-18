@@ -1,27 +1,28 @@
 var verso_carta = '<p>❓</p>'
 var frentes_de_carta  = ['🇧🇷','🇺🇸','🇫🇷','🇩🇪',
                          '🇧🇪','🇨🇭','🇯🇵','🇨🇦']
-                         
-var frentes_de_carta_2 = ['🇵🇹', '🇪🇸', '🇦🇷', '🇺🇾',
-                          '🇨🇴', '🇨🇱', '🇲🇽' ,'🇵🇾']
-
 var todas = frentes_de_carta.concat(frentes_de_carta)
 var primeiro_clique = false
 var primeira_célula = null
 var segundo_clique = false
 var segunda_célula = null
-var area = document.querySelector('div#area_tabela')
+
+//@@
+var area = document.querySelector('body')
+var tabela = document.createElement('table');
+var num_linhas = 4
+var num_colunas = 4
 
 function inicia_tabela(nl,nc) {
     area.innerHTML = ''
-    let tabela = document.createElement('table')
+    let tabela = document.createElement('table') //@@
     if (tabela != null) {
         for (let i = 0; i < nl; i++) {
-            let linha = document.createElement('tr')
+            let linha = document.createElement('tr') //@@
             for (let j = 0; j < nc; j++)
             {
-                let célula = document.createElement('td')
-                linha.appendChild(célula)
+                let célula = document.createElement('td') //@@
+                linha.appendChild(célula) //@@
                 célula.onclick = function () {
                     cliqueiNaCélula(this);
                 }
@@ -31,9 +32,9 @@ function inicia_tabela(nl,nc) {
                 // deleta de 'todas' o elemento escolhido 
                 todas.splice(pos,1)
             }
-            tabela.appendChild(linha)
+            tabela.appendChild(linha) //@@
         }
-        area.appendChild(tabela)
+        area.appendChild(tabela) //@@
      }    
 }
 
@@ -60,7 +61,7 @@ function cliqueiNaCélula(célula) {
                 primeira_célula.innerHTML = verso_carta
                 segunda_célula.innerHTML = verso_carta
                 reinicia()
-              }, 1500);
+              }, 3000);
         }
     }
 }
@@ -85,25 +86,4 @@ function frente_aleatória(min, max){
     return num
 }
 
-function mostraTabela(){
-    let num_linhas = 4
-    let num_colunas = 4
-    let escolha = document.querySelector("select#meuSelect");
-    let perfil = escolha.value
-
-    todas = frentes_de_carta.concat(frentes_de_carta)
-    switch (perfil) {
-        case "avan":
-            todas2 = frentes_de_carta_2.concat(frentes_de_carta_2)
-            todas = todas.concat(todas2)
-            num_linhas = 8
-            num_colunas = 4
-            break
-        default:
-            num_linhas = 4
-            num_colunas = 4
-    }
-
-    inicia_tabela(num_linhas,num_colunas)
-}
-
+inicia_tabela(num_linhas, num_colunas)
