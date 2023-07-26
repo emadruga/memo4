@@ -1,6 +1,6 @@
 var verso_carta = '<p>❓</p>'
 var frentes_de_carta  = ['🇧🇷','🇺🇸','🇫🇷','🇩🇪',
-                         '🇧🇪','🇨🇭','🇯🇵','🇨🇦']
+                         '🇹🇷','🇨🇳','🇮🇹', '🇪🇸']
 var todas = frentes_de_carta.concat(frentes_de_carta)
 var primeiro_clique = false
 var primeira_célula = null
