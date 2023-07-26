@@ -9,14 +9,14 @@ var segunda_célula = null
 
 //@@
 var area = document.querySelector('body')
-var tabela = document.createElement('table');
+var tabela = document.querySelector('#tabela-memo');
 var num_linhas = 4
 var num_colunas = 4
 
 function inicia_tabela(nl,nc) {
-    area.innerHTML = ''
-    let tabela = document.createElement('table') //@@
-    if (tabela != null) {
+    //area.innerHTML = ''
+    let tab = document.createElement('table') //@@
+    if (tab != null) {
         for (let i = 0; i < nl; i++) {
             let linha = document.createElement('tr') //@@
             for (let j = 0; j < nc; j++)
@@ -32,9 +32,9 @@ function inicia_tabela(nl,nc) {
                 // deleta de 'todas' o elemento escolhido 
                 todas.splice(pos,1)
             }
-            tabela.appendChild(linha) //@@
+            tab.appendChild(linha) //@@
         }
-        area.appendChild(tabela) //@@
+        tabela.appendChild(tab) //@@
      }    
 }
 

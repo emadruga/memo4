@@ -26,4 +26,21 @@ p {
     height: 100%;
     font-size: 45pt;
 }
-  
+
+dl {
+  display: block;
+  margin-top: .1cm;
+  margin-bottom: 0;
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+
+dt {
+  display: block;
+}
+
+dd {
+    display: block;
+    margin-left: 0;
+    margin-bottom: .2cm;
+}
